@@ -5,6 +5,7 @@ from blacklist import BLACKLIST
 from resources.Fernando import my_data
 from resources.user import Create, Login, Logout, UserAccountConfirm
 from flask_jwt_extended import JWTManager
+from sql_alchemy import db
 
 # Inicializa o Flask
 app = Flask(__name__)
@@ -18,12 +19,17 @@ app.config['JWT_SECRET_KEY'] = 'DontTellAnyone'
 
 # ativa a "lista negra" do jwt
 app.config['JWT_BLACKLIST_ENABLE'] = True
+db.init_app(app)
 
 #instância do restful (objeto que define as rotas)
 api = Api(app)
 
 #instância do JWT (gerenciador de credenciais, tokens)
 jwt = JWTManager(app)
+
+@app.route('/')
+def index():
+    return '<h1>RESTFul API - Teste prático'
 
 # cria o banco de dados e todas as tabelas antes da primeira requisição 
 # através da função "create_all"
@@ -48,9 +54,3 @@ api.add_resource(Login, '/login')
 api.add_resource(Logout, '/logout')
 api.add_resource(UserAccountConfirm, '/accverification/<int:user_id>')
 
-if __name__ == '__main__':
-    from sql_alchemy import db
-    # a lib sql_alchemy é importada aqui para que só seja criado o db 
-    # quando executado o arquivo main
-    db.init_app(app)
-    app.run(debug=True)
