@@ -323,7 +323,7 @@ A API está hospedada em instância EC2 do tipo t2.micro da AWS, virtualizando o
 
 ## Documentação
 
-
+URL:  ec2-18-218-189-237.us-east-2.compute.amazonaws.com/
 
 ### Cadastro de usuário 
 
