@@ -1,8 +1,6 @@
 # API-Python
 
-Desenvolvida em Python utilizando o Micro-Framework FLASK e hospedada em instância EC2 da AWS.
-
-Este documento tem por objetivo demonstrar as funcionalidades e modo de utilização dos recursos disponíveis da REST API. Foi desenvolvida por Fernando Emerson, candidato à vaga de estágio em Cloud Public da Claranet. 
+Desenvolvida em Python utilizando o Micro-Framework FLASK e hospedada em instância EC2 da AWS. Este documento tem por objetivo demonstrar as funcionalidades e modo de utilização dos recursos disponíveis da REST API.
 
 Para se conectar à API, o usuário deve realizar um primeiro cadastro e confirmá-lo por e-mail. Após o login, uma chave token de autenticação é gerada automaticamente e através dela será possível utilizar os recursos da API. A chave token não é fixa, a cada nova sessão do usuário uma nova chave é criada. Referente ao armazenamento das informações da API, são mantidas em arquivo de banco de dados SQLite. 
 
