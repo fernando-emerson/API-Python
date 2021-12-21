@@ -176,7 +176,7 @@ A API está hospedada em instância EC2 do tipo t2.micro da AWS, virtualizando o
 22. Agora, basta acessar o ambiente virtual que foi criado
 
     ```
-    source ambvir/bin/activate
+    source venv/bin/activate
     ```
 
 23. Feito isso, é necessário instalar todas as bibliotecas listadas abaixo utilizando o comando "pip install {nome_da_biblioteca}"
